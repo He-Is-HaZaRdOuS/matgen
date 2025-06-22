@@ -194,8 +194,8 @@ def scale_sparse_matrix_bilinear(
             for new_row, new_col in sampled_new_coords:
                 value = bilinear_interpolation(
                     original_csr,
-                    new_row,
-                    new_col,
+                    int(new_row),
+                    int(new_col),
                     scale_factor,
                     original_size,
                 )

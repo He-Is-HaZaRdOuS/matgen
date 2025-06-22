@@ -1,4 +1,4 @@
-"""MatGen"""
+"""MatrixGen"""
 
 from scipy.sparse import csr_matrix
 

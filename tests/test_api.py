@@ -2,8 +2,8 @@ import numpy as np
 import pytest
 from scipy.sparse import identity
 
-from matgen import RESIZE_METHODS, resize_matrix
-from matgen.utils.io import load_matrix, save_matrix
+from matrixgen import RESIZE_METHODS, resize_matrix
+from matrixgen.utils.io import load_matrix, save_matrix
 
 
 @pytest.mark.parametrize("method", RESIZE_METHODS)

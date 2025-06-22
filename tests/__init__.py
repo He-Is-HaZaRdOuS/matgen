@@ -1,1 +1,1 @@
-"""Test suite for the matgen package."""
+"""Test suite for the matrixgen package."""

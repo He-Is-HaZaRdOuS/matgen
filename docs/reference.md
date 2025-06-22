@@ -1,8 +1,8 @@
 # Reference
 
-## matgen
+## matrixgen
 
 ```{eval-rst}
-.. automodule:: matgen
+.. automodule:: matrixgen
    :members:
 ```

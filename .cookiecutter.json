@@ -7,10 +7,10 @@
   "copyright_year": "2025",
   "development_status": "Development Status :: 3 - Alpha",
   "email": "yousifhazardous@gmail.com",
-  "friendly_name": "MatGen",
+  "friendly_name": "MatrixGen",
   "github_user": "He-Is-HaZaRdOuS",
   "license": "Apache-2.0",
-  "package_name": "matgen",
-  "project_name": "matgen",
+  "package_name": "matrixgen",
+  "project_name": "matrixgen",
   "version": "0.1.0"
 }

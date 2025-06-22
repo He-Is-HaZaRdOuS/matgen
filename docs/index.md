@@ -19,5 +19,5 @@ reference
 contributing
 Code of Conduct <codeofconduct>
 License <license>
-Changelog <https://github.com/He-Is-HaZaRdOuS/matgen/releases>
+Changelog <https://github.com/He-Is-HaZaRdOuS/matrixgen/releases>
 ```
