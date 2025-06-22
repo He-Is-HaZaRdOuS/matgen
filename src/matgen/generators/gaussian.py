@@ -86,7 +86,7 @@ def downsample_sparse(matrix):
     downsampled = sp.coo_matrix(
         (new_data, (new_rows, new_cols)), shape=new_shape
     )
-    return downsampled.tocsr()
+    return sp.csr_matrix(downsampled.tocsr())
 
 
 def scale_sparse_matrix_gaussian(

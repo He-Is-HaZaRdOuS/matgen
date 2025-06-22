@@ -8,3 +8,9 @@
 /docs/_build/
 /src/*.egg-info/
 __pycache__/
+*.mtx*
+*.csv*
+*.png*
+*.svg*
+*.pdf*
+*.log*
