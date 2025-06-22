@@ -64,6 +64,8 @@ flake8 = "^6.1"
 isort = "^5.13"
 pyupgrade = "^3.15"
 toml = "^0.10"
+pytest = "^8.4.1"
+pytest-cov = "^6.2.1"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
