@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "matgen"
+name = "matrixgen"
 version = "0.1.0"
 description = "Synthetic Sparse Matrix Generator"
 authors = ["Yousif Suhail <yousifhazardous@gmail.com>"]
