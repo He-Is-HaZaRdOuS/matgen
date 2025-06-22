@@ -14,8 +14,15 @@ classifiers = ["Development Status :: 3 - Alpha"]
 Changelog = "https://github.com/He-Is-HaZaRdOuS/matgen/releases"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.11"
 click = ">=8.0.1"
+pyyaml = { version = "^6.0.2", allow-prereleases = true, source = "pypi" }
+scipy = "^1.16.0"
+matplotlib = "^3.10.3"
+pywavelets = "^1.8.0"
+numpy = "^2.3.1"
+scikit-learn = "^1.7.0"
+scikit-image = "^0.25.2"
 
 [tool.poetry.dev-dependencies]
 Pygments = ">=2.10.0"
@@ -44,7 +51,7 @@ xdoctest = { extras = ["colors"], version = ">=0.15.10" }
 myst-parser = { version = ">=0.16.1" }
 
 [tool.poetry.scripts]
-matgen = "matgen.__main__:main"
+matgen = "matgen.cli:main"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
