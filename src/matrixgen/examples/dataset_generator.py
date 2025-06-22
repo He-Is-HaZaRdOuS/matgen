@@ -1,10 +1,9 @@
-import inspect
 import multiprocessing as mp
 import os
 import sys
 import time
 
-from matgen import RESIZE_METHODS, load_matrix, save_matrix
+from matrixgen import RESIZE_METHODS, load_matrix, resize_matrix, save_matrix
 
 NUM_CORES = 8
 INPUT_DIR = "matrices"
@@ -26,20 +25,6 @@ UPSCALE_METHODS = {
 }
 
 
-def safe_scale(method, matrix, orig_name, new_dim, match_nnz=None):
-    try:
-        sig = inspect.signature(method)
-        if "match_nnz" in sig.parameters:
-            return method(matrix, new_dim, match_nnz=match_nnz)
-        else:
-            return method(matrix, new_dim)
-    except Exception as e:
-        print(
-            f"[SKIP] {method.__name__} failed on matrix {orig_name} with dim {new_dim} (match_nnz={match_nnz}): {e}"
-        )
-        return None
-
-
 def process_variant(task):
     sys.stdout = open("output.log", "a", buffering=1)
     sys.stderr = sys.stdout
@@ -53,28 +38,19 @@ def process_variant(task):
         print(f"[ERROR] Failed to load {matrix_filename}: {e}")
         return
 
-    sig = inspect.signature(method)
-    match_nnz_options = (
-        [True, False] if "match_nnz" in sig.parameters else [False]
+    print(
+        f"[INFO] Processing {matrix_filename} with {method}_{variant_type}_{new_dim}x{new_dim}"
     )
+    start_time = time.time()
+    scaled = resize_matrix(matrix, new_dim, method)
+    end_time = time.time()
+    elapsed_time = end_time - start_time
 
-    for match_nnz in match_nnz_options:
-        print(
-            f"[INFO] Processing {matrix_filename} with {method.__name__}_{variant_type}_{new_dim}x{new_dim} match_nnz={match_nnz}"
-        )
-        start_time = time.time()
-        scaled = safe_scale(method, matrix, orig_name, new_dim, match_nnz)
-        end_time = time.time()
-        elapsed_time = end_time - start_time
-
-        if scaled is None:
-            continue
-
-        new_name = (
-            f"{orig_name}_synthetic_{method.__name__}_{variant_type}_"
-            f"{new_dim}x{new_dim}_matchnnz_{match_nnz}_nnz{scaled.nnz}.mtx"
-        )
-        save_matrix_with_header(scaled, new_name, OUTPUT_DIR, elapsed_time)
+    new_name = (
+        f"{orig_name}_synthetic_{method}_{variant_type}_"
+        f"{new_dim}x{new_dim}_matchnnz_nnz{scaled.nnz}.mtx"
+    )
+    save_matrix_with_header(scaled, new_name, OUTPUT_DIR, elapsed_time)
 
 
 def save_matrix_with_header(matrix, filename, output_dir, elapsed_time):
@@ -102,7 +78,7 @@ def main():
         orig_name = os.path.splitext(filename)[0]
 
         # Downscale variants
-        for method in DOWNSCALE_METHODS.values():
+        for method in DOWNSCALE_METHODS:
             for variant_type, new_dim in [
                 ("half", 0),  # dummy, to be replaced by real dims
                 ("decrement", 0),
@@ -110,7 +86,7 @@ def main():
                 tasks.append((method, filename, variant_type, new_dim))
 
         # Upscale variants
-        for method in UPSCALE_METHODS.values():
+        for method in UPSCALE_METHODS:
             for variant_type, new_dim in [
                 ("quadruple", 0),
                 ("double", 0),
