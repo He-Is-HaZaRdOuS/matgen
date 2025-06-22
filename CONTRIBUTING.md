@@ -12,9 +12,9 @@ Here is a list of important resources for contributors:
 - [Code of Conduct]
 
 [apache 2.0 license]: https://opensource.org/licenses/Apache-2.0
-[source code]: https://github.com/He-Is-HaZaRdOuS/matgen
-[documentation]: https://matgen.readthedocs.io/
-[issue tracker]: https://github.com/He-Is-HaZaRdOuS/matgen/issues
+[source code]: https://github.com/He-Is-HaZaRdOuS/matrixgen
+[documentation]: https://matrixgen.readthedocs.io/
+[issue tracker]: https://github.com/He-Is-HaZaRdOuS/matrixgen/issues
 
 ## How to report a bug
 
@@ -54,7 +54,7 @@ or the command-line interface:
 
 ```console
 $ poetry run python
-$ poetry run matgen
+$ poetry run matrixgen
 ```
 
 [poetry]: https://python-poetry.org/
@@ -108,7 +108,7 @@ $ nox --session=pre-commit -- install
 It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
-[pull request]: https://github.com/He-Is-HaZaRdOuS/matgen/pulls
+[pull request]: https://github.com/He-Is-HaZaRdOuS/matrixgen/pulls
 
 <!-- github-only -->
 

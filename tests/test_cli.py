@@ -5,7 +5,7 @@ import os
 import pytest
 from click.testing import CliRunner
 
-from matgen.cli import main
+from matrixgen.cli import main
 
 
 @pytest.fixture
@@ -20,7 +20,7 @@ def test_resize_cli(tmp_path):
 
     from scipy.sparse import identity
 
-    from matgen.utils.io import load_matrix, save_matrix
+    from matrixgen.utils.io import load_matrix, save_matrix
 
     original = identity(10, format="csr")
     with tempfile.TemporaryDirectory() as tmpdir:
@@ -73,7 +73,7 @@ def test_resize_cli_invalid_method(runner, tmp_path):
 
     from scipy.sparse import identity
 
-    from matgen.utils.io import save_matrix
+    from matrixgen.utils.io import save_matrix
 
     with tempfile.TemporaryDirectory() as tmpdir:
         input_path = os.path.join(tmpdir, "input.mtx")
@@ -102,7 +102,7 @@ def test_resize_cli_invalid_size(runner, tmp_path):
 
     from scipy.sparse import identity
 
-    from matgen.utils.io import save_matrix
+    from matrixgen.utils.io import save_matrix
 
     with tempfile.TemporaryDirectory() as tmpdir:
         input_path = os.path.join(tmpdir, "input.mtx")
@@ -134,7 +134,7 @@ def test_resize_cli_default_method(runner, tmp_path):
 
     from scipy.sparse import identity
 
-    from matgen.utils.io import load_matrix, save_matrix
+    from matrixgen.utils.io import load_matrix, save_matrix
 
     with tempfile.TemporaryDirectory() as tmpdir:
         input_path = os.path.join(tmpdir, "input.mtx")

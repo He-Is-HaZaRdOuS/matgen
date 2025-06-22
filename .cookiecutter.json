@@ -10,7 +10,7 @@
   "friendly_name": "MatGen",
   "github_user": "He-Is-HaZaRdOuS",
   "license": "Apache-2.0",
-  "package_name": "matgen",
-  "project_name": "matgen",
+  "package_name": "matrixgen",
+  "project_name": "matrixgen",
   "version": "0.1.0"
 }

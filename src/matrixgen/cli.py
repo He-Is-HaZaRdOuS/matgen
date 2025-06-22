@@ -2,8 +2,8 @@ import os
 
 import click
 
-from matgen import load_matrix, resize_matrix, save_matrix
-from matgen.core import RESIZE_METHODS
+from matrixgen import load_matrix, resize_matrix, save_matrix
+from matrixgen.core import RESIZE_METHODS
 
 
 @click.group()

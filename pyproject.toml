@@ -5,13 +5,13 @@ description = "Synthetic Sparse Matrix Generator"
 authors = ["Yousif Suhail <yousifhazardous@gmail.com>"]
 license = "Apache-2.0"
 readme = "README.md"
-homepage = "https://github.com/He-Is-HaZaRdOuS/matgen"
-repository = "https://github.com/He-Is-HaZaRdOuS/matgen"
-documentation = "https://matgen.readthedocs.io"
+homepage = "https://github.com/He-Is-HaZaRdOuS/matrixgen"
+repository = "https://github.com/He-Is-HaZaRdOuS/matrixgen"
+documentation = "https://matrixgen.readthedocs.io"
 classifiers = ["Development Status :: 3 - Alpha"]
 
 [tool.poetry.urls]
-Changelog = "https://github.com/He-Is-HaZaRdOuS/matgen/releases"
+Changelog = "https://github.com/He-Is-HaZaRdOuS/matrixgen/releases"
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -52,7 +52,7 @@ xdoctest = { extras = ["colors"], version = ">=0.15.10" }
 myst-parser = { version = ">=0.16.1" }
 
 [tool.poetry.scripts]
-matgen = "matgen.cli:main"
+matrixgen = "matrixgen.cli:main"
 
 [tool.poetry.group.dev.dependencies]
 nox = "^2025.5.1"
@@ -71,7 +71,7 @@ tests = ["tests", "*/tests"]
 
 [tool.coverage.run]
 branch = true
-source = ["matgen", "tests"]
+source = ["matrixgen", "tests"]
 
 [tool.coverage.report]
 show_missing = true

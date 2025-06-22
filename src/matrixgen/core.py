@@ -1,14 +1,14 @@
 from scipy.sparse import csr_matrix
 
-from matgen.generators.bilinear import scale_sparse_matrix_bilinear
-from matgen.generators.dct import scale_sparse_matrix_dct_blockwise
-from matgen.generators.fourier import scale_sparse_matrix_fourier
-from matgen.generators.gaussian import scale_sparse_matrix_gaussian
-from matgen.generators.graph import scale_sparse_matrix_graph
-from matgen.generators.image import scale_sparse_matrix_image
-from matgen.generators.lanczos import scale_sparse_matrix_lanczos
-from matgen.generators.nearest import scale_sparse_matrix_nearest
-from matgen.generators.wavelet import scale_sparse_matrix_wavelet
+from matrixgen.generators.bilinear import scale_sparse_matrix_bilinear
+from matrixgen.generators.dct import scale_sparse_matrix_dct_blockwise
+from matrixgen.generators.fourier import scale_sparse_matrix_fourier
+from matrixgen.generators.gaussian import scale_sparse_matrix_gaussian
+from matrixgen.generators.graph import scale_sparse_matrix_graph
+from matrixgen.generators.image import scale_sparse_matrix_image
+from matrixgen.generators.lanczos import scale_sparse_matrix_lanczos
+from matrixgen.generators.nearest import scale_sparse_matrix_nearest
+from matrixgen.generators.wavelet import scale_sparse_matrix_wavelet
 
 # Mapping from method name to function
 RESIZE_METHODS = {
