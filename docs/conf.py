@@ -1,5 +1,6 @@
 """Sphinx configuration."""
-project = "MatGen"
+
+project = "MatrixGen"
 author = "Yousif Suhail"
 copyright = "2025, Yousif Suhail"
 extensions = [

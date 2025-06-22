@@ -9,7 +9,7 @@ from matrixgen.core import RESIZE_METHODS
 @click.group()
 @click.version_option()
 def main():
-    """MatGen - Sparse matrix generator and resizer CLI."""
+    """MatrixGen - Sparse matrix generator and resizer CLI."""
 
 
 @main.command()

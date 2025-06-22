@@ -1,4 +1,4 @@
-# MatGen
+# MatrixGen
 
 [![PyPI](https://img.shields.io/pypi/v/matrixgen.svg)][pypi status]
 [![Status](https://img.shields.io/pypi/status/matrixgen.svg)][pypi status]
@@ -20,7 +20,7 @@
 [black]: https://github.com/psf/black
 
 ## Overview
-- MatGen is a modular Python package for generating, resizing, and analyzing sparse matrices. It supports multiple synthesis methods and provides tools for structure-aware scaling, useful in scientific computing, numerical simulations, and ML workloads where realistic matrix patterns are essential.
+- MatrixGen is a modular Python package for generating, resizing, and analyzing sparse matrices. It supports multiple synthesis methods and provides tools for structure-aware scaling, useful in scientific computing, numerical simulations, and ML workloads where realistic matrix patterns are essential.
 
 ## Features
 
@@ -75,7 +75,7 @@ Addresses the lack of diverse, realistic sparse matrices for algorithm validatio
 
 ## Installation
 
-You can install _MatGen_ via [pip] from [PyPI]:
+You can install _MatrixGen_ via [pip] from [PyPI]:
 
 ```console
 $ pip install matrixgen
@@ -83,7 +83,7 @@ $ pip install matrixgen
 
 ## Usage
 
-You can use MatGen via:
+You can use MatrixGen via:
 - Python API: `from matrixgen import RESIZE_METHODS, resize_matrix, load_matrix, save_matrix`
 - Command Line: Run `matrixgen --help` to see options
 - See the examples/ folder for usage patterns.
@@ -96,7 +96,7 @@ To learn more, see the [Contributor Guide].
 ## License
 
 Distributed under the terms of the [Apache 2.0 license][license],
-_MatGen_ is free and open source software.
+_MatrixGen_ is free and open source software.
 
 ## Issues
 
@@ -107,7 +107,7 @@ please [file an issue] along with a detailed description.
 
 This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
 
-This project is based off of [MatGen-d](https://github.com/He-Is-HaZaRdOuS/matrixgen-d) which in itself is a fork of the original [MatGen](https://github.com/aliemrepmk/MatGen---A-Realistic-Sparse-Matrix-Generator) by [Ali Emre Pamuk](https://github.com/aliemrepmk), [Mert Altekin](https://github.com/AltekinMert), and [Faruk Kaplan](https://github.com/farukaplan). They are the original creators of the matrix synthesis/generation/resizing logic and without them, this project wouldn't exist.
+This project is based off of [MatrixGen-d](https://github.com/He-Is-HaZaRdOuS/matrixgen-d) which in itself is a fork of the original [MatrixGen](https://github.com/aliemrepmk/MatrixGen---A-Realistic-Sparse-Matrix-Generator) by [Ali Emre Pamuk](https://github.com/aliemrepmk), [Mert Altekin](https://github.com/AltekinMert), and [Faruk Kaplan](https://github.com/farukaplan). They are the original creators of the matrix synthesis/generation/resizing logic and without them, this project wouldn't exist.
 
 [@cjolowicz]: https://github.com/cjolowicz
 [pypi]: https://pypi.org/
