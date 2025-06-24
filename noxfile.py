@@ -241,3 +241,28 @@ def docs(session: Session) -> None:
         shutil.rmtree(build_dir)
 
     session.run("sphinx-autobuild", *args)
+
+
+@session(python=python_versions[0])
+def docs(session):
+    """Build the documentation once (for CI)."""
+    session.install(".")
+    session.install("sphinx", "sphinx-click", "furo", "myst-parser")
+    build_dir = Path("docs", "_build")
+    if build_dir.exists():
+        shutil.rmtree(build_dir)
+    session.run("sphinx-build", "-b", "html", "docs", "docs/_build")
+
+
+@session(python=python_versions[0])
+def docs_live(session):
+    """Serve the documentation with live reloading (for local dev)."""
+    session.install(".")
+    session.install(
+        "sphinx", "sphinx-autobuild", "sphinx-click", "furo", "myst-parser"
+    )
+    build_dir = Path("docs", "_build")
+    if build_dir.exists():
+        shutil.rmtree(build_dir)
+    args = session.posargs or ["--open-browser", "docs", "docs/_build"]
+    session.run("sphinx-autobuild", *args)
