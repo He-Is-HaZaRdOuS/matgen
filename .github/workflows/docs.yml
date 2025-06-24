@@ -27,4 +27,4 @@ jobs:
           name: docs
           path: docs/_build
       - name: Check links
-        run: nox --force-color --session=linkcheck
+        run: poetry run nox --force-color --session=linkcheck
