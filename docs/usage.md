@@ -1,7 +1,7 @@
 # Usage
 
 ```{eval-rst}
-.. click:: matrixgen.__main__:main
+.. click:: matrixgen.cli:main
     :prog: matrixgen
     :nested: full
 ```

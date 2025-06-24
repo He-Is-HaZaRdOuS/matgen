@@ -107,7 +107,7 @@ please [file an issue] along with a detailed description.
 
 This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
 
-This project is based off of [MatrixGen-d](https://github.com/He-Is-HaZaRdOuS/matrixgen-d) which in itself is a fork of the original [MatrixGen](https://github.com/aliemrepmk/MatrixGen---A-Realistic-Sparse-Matrix-Generator) by [Ali Emre Pamuk](https://github.com/aliemrepmk), [Mert Altekin](https://github.com/AltekinMert), and [Faruk Kaplan](https://github.com/farukaplan). They are the original creators of the matrix synthesis/generation/resizing logic and without them, this project wouldn't exist.
+This project is based off of [MatGen-d](https://github.com/He-Is-HaZaRdOuS/matgen-d) which in itself is a fork of the original [MatGen](https://github.com/aliemrepmk/MatGen---A-Realistic-Sparse-Matrix-Generator) by [Ali Emre Pamuk](https://github.com/aliemrepmk), [Mert Altekin](https://github.com/AltekinMert), and [Faruk Kaplan](https://github.com/farukaplan). They are the original creators of the matrix synthesis/generation/resizing logic and without them, this project wouldn't exist.
 
 [@cjolowicz]: https://github.com/cjolowicz
 [pypi]: https://pypi.org/
