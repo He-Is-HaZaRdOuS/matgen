@@ -271,7 +271,14 @@ def docs_live(session):
 @session(python=python_versions[0])
 def linkcheck(session):
     """Check documentation links."""
-    session.install("sphinx")
+    # Install same packages as docs build
+    session.install(
+        "sphinx",
+        "sphinx-click",
+        "furo",
+        "myst-parser",
+        "sphinx-autobuild",  # optional, if used
+    )
     session.run(
         "sphinx-build", "-b", "linkcheck", "docs", "docs/_build/linkcheck"
     )
