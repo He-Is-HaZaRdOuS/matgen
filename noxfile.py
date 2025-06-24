@@ -266,3 +266,12 @@ def docs_live(session):
         shutil.rmtree(build_dir)
     args = session.posargs or ["--open-browser", "docs", "docs/_build"]
     session.run("sphinx-autobuild", *args)
+
+
+@session(python=python_versions[0])
+def linkcheck(session):
+    """Check documentation links."""
+    session.install("sphinx")
+    session.run(
+        "sphinx-build", "-b", "linkcheck", "docs", "docs/_build/linkcheck"
+    )
