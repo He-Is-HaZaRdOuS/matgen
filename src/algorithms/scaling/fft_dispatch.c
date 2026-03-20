@@ -27,13 +27,13 @@
  */
 static bool is_binary_matrix(const matgen_csr_matrix_t* matrix) {
   const matgen_size_t sample_size = MATGEN_MIN(matrix->nnz, 10000);
-  
+
   for (matgen_size_t i = 0; i < sample_size; i++) {
     if (fabs(matrix->values[i] - 1.0) > 1e-9) {
       return false;
     }
   }
-  
+
   return true;
 }
 
@@ -72,7 +72,12 @@ matgen_error_t matgen_scale_fft_with_policy(
   switch (resolved) {
     case MATGEN_EXEC_SEQ:
       MATGEN_LOG_DEBUG("Using sequential FFT backend (FFTW3)");
+#ifdef MATGEN_HAS_FFTW3
       return matgen_scale_fft_seq(source, new_rows, new_cols, threshold, result);
+#else
+      MATGEN_LOG_ERROR("FFTW3 not available");
+      return MATGEN_ERROR_UNSUPPORTED;
+#endif
 
 #ifdef MATGEN_HAS_CUDA
     case MATGEN_EXEC_PAR_UNSEQ:
@@ -83,7 +88,12 @@ matgen_error_t matgen_scale_fft_with_policy(
     case MATGEN_EXEC_PAR:
       // OpenMP not implemented for FFT, fall back to sequential
       MATGEN_LOG_DEBUG("OpenMP not implemented for FFT, using sequential");
+#ifdef MATGEN_HAS_FFTW3
       return matgen_scale_fft_seq(source, new_rows, new_cols, threshold, result);
+#else
+      MATGEN_LOG_ERROR("FFTW3 not available");
+      return MATGEN_ERROR_UNSUPPORTED;
+#endif
 
     default:
       MATGEN_LOG_ERROR("Unsupported execution policy: %d", resolved);
@@ -124,7 +134,12 @@ matgen_error_t matgen_scale_fft_with_policy_detailed(
 
   switch (resolved) {
     case MATGEN_EXEC_SEQ:
+#ifdef MATGEN_HAS_FFTW3
       return matgen_scale_fft_seq(source, new_rows, new_cols, threshold, result);
+#else
+      MATGEN_LOG_ERROR("FFTW3 not available");
+      return MATGEN_ERROR_UNSUPPORTED;
+#endif
 
 #ifdef MATGEN_HAS_CUDA
     case MATGEN_EXEC_PAR_UNSEQ:
@@ -133,7 +148,12 @@ matgen_error_t matgen_scale_fft_with_policy_detailed(
 
     case MATGEN_EXEC_PAR:
       MATGEN_LOG_DEBUG("OpenMP not available, using sequential");
+#ifdef MATGEN_HAS_FFTW3
       return matgen_scale_fft_seq(source, new_rows, new_cols, threshold, result);
+#else
+      MATGEN_LOG_ERROR("FFTW3 not available");
+      return MATGEN_ERROR_UNSUPPORTED;
+#endif
 
     default:
       return MATGEN_ERROR_UNSUPPORTED;
