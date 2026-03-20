@@ -12,7 +12,7 @@
 #endif
 
 #define DCT_BLOCK_SIZE 8
-#define DCT_THRESHOLD 1e-8f
+#define DCT_THRESHOLD 1e-5f
 #define DCT_MAX_DIM 32
 
 static void dct_1d(const matgen_value_t* in, matgen_value_t* out, int N) {
